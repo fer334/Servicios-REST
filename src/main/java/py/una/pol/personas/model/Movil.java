@@ -1,5 +1,9 @@
 package py.una.pol.personas.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+// @SuppressWarnings("serial")
+@XmlRootElement
 public class Movil {
 
     private Long identificador;
@@ -39,5 +43,5 @@ public class Movil {
         this.tipo = tipo;
         return this;
     }
-    
+
 }
