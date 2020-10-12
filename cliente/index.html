@@ -10,10 +10,18 @@
 </head>
 <body>
     <div class="container">
-        <h6 class="display-4 text-center mt-5" >Cliente Prueba Servicios REST</h6>
-        <fieldset class="border p-2">
+        <h6 class="display-4 text-center mt-5">Cliente Prueba Servicios REST</h6>
+        <div class="m-5">
+            <h2 class="text-center">Opciones</h2>
+            <div class="row">
+                <button id="menu-res" type="button" class="col-4 btn btn-outline-primary">Registrar movil</button>
+                <button id="menu-ubi" type="button" class="col-4 btn btn-outline-primary">Ubicar movil</button>
+                <button id="menu-lis" type="button" class="col-4 btn btn-outline-primary">Listar movil</button>
+            </div>
+        </div>
+
+        <fieldset id ="fieldres" class="border p-2 collapse">
             <legend class="w-auto">Registrar movil</legend>
-            <form>
                 <div class="form-group">
                     <label for="idMovil">Identificador del movil</label>
                     <input class="form-control" id="idMovil">
@@ -28,20 +36,21 @@
                         <option>Otro</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary" id="submitRegistrar">Registrar</button>
-            </form>
+                <div id="showInputMovil" class=" container collapse">
+                    <div class="form-group">
+                        <label for="idTipo">Tipo del movil</label>
+                        <input class="form-control" id="idTipo">
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="submitRegistrar">Registrar</button>
         </fieldset>
 
-        <fieldset class="border p-2">
+        <fieldset id ="fieldubi" class="border p-2 collapse">
             <legend class="w-auto">Ubicar movil</legend>
             <div class="form-group">
                 <label for="">Identificador del movil</label>
                 <select class="form-control" id="selectMovil">
                     <option default>Seleccione uno</option>
-                    <option>adf123</option>
-                    <option>Avion</option>
-                    <option>Embarcacion</option>
-                    <option>Otro</option>
                 </select>
             </div>
             <div class="form-group">
@@ -57,7 +66,7 @@
             <button type="submit" class="btn btn-primary" id="submitUbicar">Registrar movil en esta ubicacion</button>
         </fieldset>
 
-        <fieldset class="border p-2">
+        <fieldset id ="fieldlis" class="border p-2 collapse">
             <legend class="w-auto">Lista de moviles cercanos a una ubicacion </legend>
             <div class="form-group">
                 <label for="idLatitudL">Latitud</label>
@@ -121,5 +130,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
 </body>
 </html>
