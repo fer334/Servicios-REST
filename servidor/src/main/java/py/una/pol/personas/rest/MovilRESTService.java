@@ -41,7 +41,6 @@ public class MovilRESTService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response registrar(Movil m) {
-        log.info("registrar");
 
         Response.ResponseBuilder builder = null;
 

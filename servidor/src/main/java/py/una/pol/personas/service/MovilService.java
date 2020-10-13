@@ -23,18 +23,22 @@ public class MovilService {
     UbicacionDAO daoUbi;
 
     public List<Movil> seleccionar() {
+        log.info("Mostrando lista de moviles");
         return daoMovil.seleccionar();
     }
 
     public void registrar(Movil m) throws Exception {
         daoMovil.registrar(m);
+        log.info("registrado movil: "+m.getIdentificador());
     }
 
     public void ubicar(Ubicacion u) throws Exception {
         daoUbi.ubicar(u);
+        log.info("registrando ubicacion: "+u.getLatitud()+"-"+u.getLongitud());
     }
 
     public List<UbicacionMovil> seleccionar(String lat, String lon, String dis) {
+        log.info("ubicando moviles en el rango:"+dis);
         return daoUbi.seleccionar(lat, lon, dis);
     }
 

@@ -52,7 +52,6 @@ public class MovilDAO {
 
         Connection conn = null;
         try {
-            log.info("hola");
 
             conn = Bd.connect();
             PreparedStatement p = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
