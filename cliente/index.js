@@ -6,17 +6,6 @@ document.getElementById("selectTipo").addEventListener("change", (e) => {
 });
 
 document.getElementById("submitRegistrar").addEventListener("click", () => {
-//   var xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function () {
-//     if (this.readyState == 4 && this.status == 200) {
-//       r = this.responseText;
-//       console.log(r);
-      
-//     }
-//   };
-//   xhttp.open("GET", "localhost:8080/movil/rest/", true);
-//   xhttp.send();
-
   var xhttp = new XMLHttpRequest();
   xhttp.open("POST", "http://127.0.0.1:8080/movil/rest/", true);
   xhttp.setRequestHeader("Content-Type", "application/json");
@@ -39,9 +28,9 @@ document.getElementById("submitRegistrar").addEventListener("click", () => {
   xhttp.send(JSON.stringify(data));
 });
 
-/*
-/ Menu
-*/
+/**
+ * Menu
+ */
 
 document.getElementById("menu-res").addEventListener("click", ()=>{
     document.getElementById('fieldres').classList.add('show');
@@ -80,4 +69,33 @@ document.getElementById("menu-lis").addEventListener("click", ()=>{
     document.getElementById('fieldres').classList.remove('show');
     document.getElementById('fieldubi').classList.remove('show');
     document.getElementById('fieldlis').classList.add('show');
+});
+
+
+/**
+ * Ubicar
+ */
+
+document.getElementById("submitUbicar").addEventListener('click',e=>{
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "http://127.0.0.1:8080/movil/rest/ubicacion", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      alert("Server response: " + this.responseText);
+    }
+  };
+
+  var data = { latitud: "", longitud: "", movil: 0};
+  data.latitud = document.getElementById("idLatitud").value;
+  data.longitud = document.getElementById("idLongitud").value;
+
+  sel = document.getElementById("selectMovil");
+  if (sel.selectedIndex != 0) {
+    let aux = sel.options[sel.selectedIndex].value;
+    data.movil = +(aux = aux.split(" -")[0]);
+    console.log(data);
+    
+    xhttp.send(JSON.stringify(data));
+  }
 });
