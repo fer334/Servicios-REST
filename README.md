@@ -11,7 +11,7 @@ mvn clean install
 ```
 correr el servidor wildfly y luego deployar el archivo movil.war
 
-Una vez que el servidor se encuentre corriendo, se debe abrir el index.html que se encuentra en la carpeta cliente con cualquier navegador.
+Una vez que el servidor se encuentre corriendo, se debe abrir el index.html con cualquier navegador, este archivo se encuentra en la carpeta cliente.
 
 # Capturas
 Se muestra la pagina principal del cliente
