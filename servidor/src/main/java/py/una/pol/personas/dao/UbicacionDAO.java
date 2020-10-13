@@ -62,7 +62,7 @@ public class UbicacionDAO {
                 Double r = Math.sqrt(Math.pow((lat1 - lat2), 2) + Math.pow((lon1 - lon2), 2));
                 Long d = r.longValue();
                  
-                int c = Long.compare(d, Long.parseLong(dis,10));
+                int c = Long.compare(d, Long.parseLong(dis));
                 if( c < 0 ){
                     Ubicacion u = new Ubicacion();
                     u.setLatitud(rs.getString(2));

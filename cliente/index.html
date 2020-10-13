@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <label for="">Tipo de movil</label>
                     <select class="form-control" id="selectTipo">
-                        <option default >Seleccione uno</option default >
+                        <option selected="selected">Seleccione uno</option>
                         <option>Auto</option>
                         <option>Avion</option>
                         <option>Embarcacion</option>
@@ -38,7 +38,7 @@
                 </div>
                 <div id="showInputMovil" class=" container collapse">
                     <div class="form-group">
-                        <label for="idTipo">Tipo del movil</label>
+                        <label for="idTipo">Tipo de movil personalizado</label>
                         <input class="form-control" id="idTipo">
                     </div>
                 </div>
@@ -84,12 +84,13 @@
                 <small class="form-text text-muted">Debe ser un numero</small>
             </div>
 
-            <button type="submit" class="btn btn-primary" id="submitListar">Registrar</button>
+            <button type="submit" class="btn btn-primary" id="submitListar">Listar</button>
         </fieldset>
 
-        <table class="table table-hover collapse">
+        <table id="table" class="table table-hover collapse">
             <thead class="thead-dark">
                 <tr>
+                    <th scope="col"></th>
                     <th scope="col">Identificador</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">Latitud</th>
@@ -98,25 +99,7 @@
                     <th scope="col">Hora</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+            <tbody id="fila">
             </tbody>
         </table>
     </div>
