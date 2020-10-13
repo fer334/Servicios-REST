@@ -1,119 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="container">
-        <h6 class="display-4 text-center mt-5">Cliente Prueba Servicios REST</h6>
-        <div class="m-5">
-            <h2 class="text-center">Opciones</h2>
-            <div class="row">
-                <button id="menu-res" type="button" class="col-4 btn btn-outline-primary">Registrar movil</button>
-                <button id="menu-ubi" type="button" class="col-4 btn btn-outline-primary">Ubicar movil</button>
-                <button id="menu-lis" type="button" class="col-4 btn btn-outline-primary">Listar movil</button>
-            </div>
+      <h6 class="display-4 text-center mt-5">Cliente Prueba Servicios REST</h6>
+      <div class="m-5">
+        <h2 class="text-center">Opciones</h2>
+        <div class="row">
+          <button
+            id="menu-res"
+            type="button"
+            class="col-4 btn btn-outline-primary"
+          >
+            Registrar movil
+          </button>
+          <button
+            id="menu-ubi"
+            type="button"
+            class="col-4 btn btn-outline-primary"
+          >
+            Ubicar movil
+          </button>
+          <button
+            id="menu-lis"
+            type="button"
+            class="col-4 btn btn-outline-primary"
+          >
+            Listar movil
+          </button>
+        </div>
+      </div>
+
+      <fieldset id="fieldres" class="border p-2 collapse">
+        <legend class="w-auto">Registrar movil</legend>
+        <div class="form-group">
+          <label for="idMovil">Identificador del movil</label>
+          <input class="form-control" id="idMovil" />
+        </div>
+        <div class="form-group">
+          <label for="">Tipo de movil</label>
+          <select class="form-control" id="selectTipo">
+            <option selected="selected">Seleccione uno</option>
+            <option>Auto</option>
+            <option>Avion</option>
+            <option>Embarcacion</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div id="showInputMovil" class="container collapse">
+          <div class="form-group">
+            <label for="idTipo">Tipo de movil personalizado</label>
+            <input class="form-control" id="idTipo" />
+          </div>
+        </div>
+        <button class="btn btn-primary" id="submitRegistrar">Registrar</button>
+      </fieldset>
+
+      <fieldset id="fieldubi" class="border p-2 collapse">
+        <legend class="w-auto">Ubicar movil</legend>
+        <div class="form-group">
+          <label for="">Identificador del movil</label>
+          <select class="form-control" id="selectMovil">
+            <option default>Seleccione uno</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="idLatitud">Latitud</label>
+          <input class="form-control" id="idLatitud" />
+          <small class="form-text text-muted">Debe ser un numero</small>
+        </div>
+        <div class="form-group">
+          <label for="idLongitud">Longitud</label>
+          <input class="form-control" id="idLongitud" />
+          <small class="form-text text-muted">Debe ser un numero</small>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitUbicar">
+          Registrar movil en esta ubicacion
+        </button>
+      </fieldset>
+
+      <fieldset id="fieldlis" class="border p-2 collapse">
+        <legend class="w-auto">
+          Lista de moviles cercanos a una ubicacion
+        </legend>
+        <div class="form-group">
+          <label for="idLatitudL">Latitud</label>
+          <input class="form-control" id="idLatitudL" />
+          <small class="form-text text-muted">Debe ser un numero</small>
+        </div>
+        <div class="form-group">
+          <label for="idLongitudL">Longitud</label>
+          <input class="form-control" id="idLongitudL" />
+          <small class="form-text text-muted">Debe ser un numero</small>
+        </div>
+        <div class="form-group">
+          <label for="idRango">Rango</label>
+          <input class="form-control" id="idRango" />
+          <small class="form-text text-muted">Debe ser un numero</small>
         </div>
 
-        <fieldset id ="fieldres" class="border p-2 collapse">
-            <legend class="w-auto">Registrar movil</legend>
-                <div class="form-group">
-                    <label for="idMovil">Identificador del movil</label>
-                    <input class="form-control" id="idMovil">
-                </div>
-                <div class="form-group">
-                    <label for="">Tipo de movil</label>
-                    <select class="form-control" id="selectTipo">
-                        <option selected="selected">Seleccione uno</option>
-                        <option>Auto</option>
-                        <option>Avion</option>
-                        <option>Embarcacion</option>
-                        <option>Otro</option>
-                    </select>
-                </div>
-                <div id="showInputMovil" class=" container collapse">
-                    <div class="form-group">
-                        <label for="idTipo">Tipo de movil personalizado</label>
-                        <input class="form-control" id="idTipo">
-                    </div>
-                </div>
-                <button class="btn btn-primary" id="submitRegistrar">Registrar</button>
-        </fieldset>
+        <button type="submit" class="btn btn-primary" id="submitListar">
+          Listar
+        </button>
+      </fieldset>
 
-        <fieldset id ="fieldubi" class="border p-2 collapse">
-            <legend class="w-auto">Ubicar movil</legend>
-            <div class="form-group">
-                <label for="">Identificador del movil</label>
-                <select class="form-control" id="selectMovil">
-                    <option default>Seleccione uno</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="idLatitud">Latitud</label>
-                <input class="form-control" id="idLatitud">
-                <small class="form-text text-muted">Debe ser un numero</small>
-            </div>
-            <div class="form-group">
-                <label for="idLongitud">Longitud</label>
-                <input class="form-control" id="idLongitud">
-                <small class="form-text text-muted">Debe ser un numero</small>
-            </div>
-            <button type="submit" class="btn btn-primary" id="submitUbicar">Registrar movil en esta ubicacion</button>
-        </fieldset>
-
-        <fieldset id ="fieldlis" class="border p-2 collapse">
-            <legend class="w-auto">Lista de moviles cercanos a una ubicacion </legend>
-            <div class="form-group">
-                <label for="idLatitudL">Latitud</label>
-                <input class="form-control" id="idLatitudL">
-                <small class="form-text text-muted">Debe ser un numero</small>
-            </div>
-            <div class="form-group">
-                <label for="idLongitudL">Longitud</label>
-                <input class="form-control" id="idLongitudL">
-                <small class="form-text text-muted">Debe ser un numero</small>
-            </div>
-            <div class="form-group">
-                <label for="idRango">Rango</label>
-                <input class="form-control" id="idRango">
-                <small class="form-text text-muted">Debe ser un numero</small>
-            </div>
-
-            <button type="submit" class="btn btn-primary" id="submitListar">Listar</button>
-        </fieldset>
-
-        <table id="table" class="table table-hover collapse">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Identificador</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Latitud</th>
-                    <th scope="col">Longitud</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Hora</th>
-                </tr>
-            </thead>
-            <tbody id="fila">
-            </tbody>
-        </table>
+      <table id="table" class="table table-hover collapse">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Identificador</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Latitud</th>
+            <th scope="col">Longitud</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+          </tr>
+        </thead>
+        <tbody id="fila"></tbody>
+      </table>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

@@ -114,7 +114,7 @@ document.getElementById("submitListar").addEventListener("click", (e) => {
     if (this.status >= 200 && this.status < 300) {
       datos = JSON.parse(this.response);
 
-      document.getElementById("fila").innerHTML="";
+      document.getElementById("fila").innerHTML = "";
 
       let c = 0;
       for (const d of datos) {
