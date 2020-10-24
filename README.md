@@ -5,6 +5,10 @@ clonar este repositorio
 ```sh
 git clone https://github.com/fer334/Servicios-REST/
 ```
+
+crear la Base de Datos de nombre sd.
+crear las tablas con las caracteristicas que se encuentran en el archivo 01_crear_tabla.SQL, de la carpeta Base de Datos
+
 crear el build de maven, el archivo .war
 ```sh
 mvn clean install
